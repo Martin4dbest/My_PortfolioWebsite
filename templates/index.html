@@ -22,30 +22,43 @@
             margin: 0;
         }
 
-        section {
+        .section-container {
             max-width: 800px;
             margin: 20px auto;
-            padding: 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
         }
 
-        h2 {
+        .content-section {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-section h2 {
             border-bottom: 2px solid #333;
             padding-bottom: 5px;
         }
 
-        p {
+        .content-section p {
             line-height: 1.6;
         }
 
-        ul {
+        .projects-section,
+        .contact-section {
+            padding: 20px;
+        }
+
+        .projects-section ul {
             list-style: none;
             padding: 0;
         }
 
-        li {
+        .projects-section li {
             margin-bottom: 10px;
         }
 
@@ -57,36 +70,58 @@
         a:hover {
             text-decoration: underline;
         }
+
+        .image-container {
+            max-width: 200px; /* Set the maximum width of the image */
+            margin-left: auto; /* Push the image to the right */
+            margin-top: 10px; /* Add margin to separate from the content */
+            align-self: flex-end; /* Align to the right within the flex container */
+        }
+
+        .image-container img {
+            width: 100%; /* Ensure the image fills its container */
+            height: auto;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Welcome to My Portfolio</h1>
     </header>
-    <section>
-        <h2>About Me</h2>
-        <p>
-            I'm a passionate software engineer with a strong foundation in building robust, scalable, and efficient solutions. I hold a certification in AWS Cloud, which complements my skills in deploying and managing cloud-based applications.
-    
-            My approach to problem-solving is driven by a deep curiosity and a willingness to learn. I thrive in dynamic environments where I can adapt to emerging technologies and collaborate with cross-functional teams.
-    
-            Beyond my technical expertise, I pride myself on being a humble and open-minded individual, always eager to take on new challenges and share knowledge with others. I believe in the power of technology to create positive change, and I'm dedicated to making a meaningful impact through innovative software solutions.
-        </p>
-    </section>
-    <section>
-        <h2>Projects</h2>
-        <ul>
-            <li><a href="/project1">Project 1</a> - <a href="https://github.com/Martin4dbest/My_Portfolio" target="_blank">GitHub</a></li>
-            <li><a href="/project2">My Other projects</a> - <a href="https://github.com/Martin4dbest" target="_blank">GitHub</a></li>
-            <!-- Add links to your projects -->
-        </ul>
-    </section>
-    <section>
-        <h2>Get in Touch</h2>
-        <p>If you have any questions or want to discuss a project, feel free to contact me:</p>
-        <p>Email: martin4dtruth2@email.com</p>
-        <p>Phone: +2349045531092</p>
-        <p>Or <a href="/contact">fill out the form here</a></p>
-    </section>
+    <div class="section-container">
+        <section class="content-section">
+            <div class="image-container">
+                <!-- Add the image here -->
+                <img src="{{ url_for('static', filename='Ma.jpg') }}" alt="Description of the image">
+            </div>
+            <div class="content-section">
+                <h2>About Me</h2>
+                <p>
+                    I'm a passionate software engineer with a strong foundation in building robust, scalable, and efficient solutions. I hold a certification in AWS Cloud, which complements my skills in deploying and managing cloud-based applications.
+                    My approach to problem-solving is driven by a deep curiosity and a willingness to learn. I thrive in dynamic environments where I can adapt to emerging technologies and collaborate with cross-functional teams.
+                    Beyond my technical expertise, I pride myself on being a humble and open-minded individual, always eager to take on new challenges and share knowledge with others. I believe in the power of technology to create positive change, and I'm dedicated to making a meaningful impact through innovative software solutions.
+                </p>
+            </div>
+        </section>
+    </div>
+    <div class="section-container">
+        <section class="projects-section">
+            <h2>Projects</h2>
+            <ul>
+                <li><a href="/project1">Project 1</a> - <a href="https://github.com/Martin4dbest/My_Portfolio" target="_blank">GitHub</a></li>
+                <li><a href="/project2">My Other projects</a> - <a href="https://github.com/Martin4dbest" target="_blank">GitHub</a></li>
+                <!-- Add links to your projects -->
+            </ul>
+        </section>
+    </div>
+    <div class="section-container">
+        <section class="contact-section">
+            <h2>Get in Touch</h2>
+            <p>If you have any questions or want to discuss a project, feel free to contact me:</p>
+            <p>Email: martin4dtruth2@email.com</p>
+            <p>Phone: +2349045531092</p>
+            <p>Or <a href="/contact">fill out the form here</a></p>
+        </section>
+    </div>
 </body>
 </html>
